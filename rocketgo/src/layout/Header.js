@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import {Menu} from 'semantic-ui-react';
 import {connect} from 'unistore/react'
 import action from '../store/zoomCityAction'
+import city from '../utilities/city'
 
 class MenuHeader extends Component {
     state = {};
 
     handleItemClick = (e, {name}) => this.setState({activeItem: name});
 
-    nextLaunchClick = () => this.props.zoomToCity({name: "San Francisco", coordinates: [-122.4194, 37.7749]});
+    nextLaunchClick = () => this.props.zoomToCity(city.getCityNextLaunch());
 
     locationClick = () => this.props.cleanZoom();
 

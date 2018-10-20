@@ -10,6 +10,8 @@ import {
     Marker,
 } from "react-simple-maps"
 import {VictoryPie} from "victory"
+import action from '../store/zoomCityAction'
+import city from '../utilities/city'
 
 const wrapperStyles = {
     width: "100%",
@@ -17,27 +19,17 @@ const wrapperStyles = {
     margin: "0 auto",
 };
 
-const cities = [
-    {name: "Zurich", coordinates: [8.5417, 47.3769], remainDays: 24,},
-    {name: "Singapore", coordinates: [103.8198, 1.3521], remainDays: 2,},
-    {name: "San Francisco", coordinates: [-122.4194, 37.7749], remainDays: 30,},
-    {name: "Sydney", coordinates: [151.2093, -33.8688], remainDays: 30,},
-    {name: "Lagos", coordinates: [3.3792, 6.5244], remainDays: 15,},
-    {name: "Buenos Aires", coordinates: [-58.3816, -34.6037], remainDays: 40,},
-    {name: "Shanghai", coordinates: [121.4737, 31.2304], remainDays: 4,},
-];
-
 const zoomCenter = (zoomCity) => zoomCity ? zoomCity.coordinates : [0, 20];
 
 const zoomRate = (zoomCity) => zoomCity ? 4 : 1;
 
 const getCountDownData = (remainDays) => [
-    {x: null, y: 100 - remainDays / 30 * 100, fill: "#FF5722"},
-    {x: null, y: remainDays / 30 * 100, fill: "#00BCD4"},
+    {x: null, y: 100 - remainDays / 30 * 100, fill: "#167ac6"},
+    {x: null, y: remainDays / 30 * 100, fill: "#999"},
 ];
 
-const MapPage = ({zoomCity}) => (
-    <div>
+const MapPage = ({zoomCity, zoomToCity}) => (
+    <div style={{backgroundColor: "#031529"}}>
         <div style={wrapperStyles}>
             <ComposableMap width={980} height={551} projectionConfig={{scale: 205}}
                            style={{width: "100%", height: "auto",}}>
@@ -54,7 +46,7 @@ const MapPage = ({zoomCity}) => (
                         ))}
                     </Geographies>
                     <Markers>
-                        {cities.map((city, i) => (
+                        {city.cities.map((city, i) => (
                             <Marker key={i} marker={city}
                                     style={{
                                         default: {outline: "none"},
@@ -63,7 +55,8 @@ const MapPage = ({zoomCity}) => (
                                     }}>
                                 <g transform="translate(-15,-15)">
                                     <circle cx={20} cy={20} r={21} fill="transparent" stroke="#607D8B"/>
-                                    <circle cx={20} cy={20} r={9} fill="transparent" stroke="#607D8B"/>
+                                    <circle cx={20} cy={20} r={9} fill="transparent" stroke="#607D8B"
+                                            onClick={() => {zoomToCity(city);}}/>
                                     <VictoryPie standalone={false} width={40} height={40} padding={0} innerRadius={10}
                                                 data={getCountDownData(city.remainDays)} style={{
                                         labels: {fill: "transparent"},
@@ -88,4 +81,4 @@ const MapPage = ({zoomCity}) => (
     </div>
 );
 
-export default connect(store => ({zoomCity: store.zoomCity}), {})(MapPage)
+export default connect(store => ({zoomCity: store.zoomCity}), action)(MapPage)
