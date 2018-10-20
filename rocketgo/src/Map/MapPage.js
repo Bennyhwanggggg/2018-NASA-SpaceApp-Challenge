@@ -1,5 +1,6 @@
-import React, { Component } from "react"
-import map from './world-50m'
+import React, { Component } from "react";
+import map from './world-50m';
+import { Button } from 'semantic-ui-react';
 import {
     ComposableMap,
     ZoomableGroup,
@@ -54,19 +55,20 @@ class MapPage extends Component {
                 <div style={wrapperStyles}>
                     {
                         this.state.cities.map((city, i) => (
-                            <button
+                            <Button
+                                color="linkedin"
+                                primary
                                 key={i}
-                                className="btn px1"
                                 data-city={i}
                                 onClick={this.handleCitySelection}
                             >
                                 { city.name }
-                            </button>
+                            </Button>
                         ))
                     }
-                    <button onClick={this.handleReset}>
+                    <Button secondary onClick={this.handleReset}>
                         { "Reset" }
-                    </button>
+                    </Button>
                 </div>
                 <div style={wrapperStyles}>
                     <ComposableMap
