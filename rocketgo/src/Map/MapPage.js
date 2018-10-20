@@ -11,22 +11,13 @@ import {
 } from "react-simple-maps"
 import {VictoryPie} from "victory"
 import action from '../store/zoomCityAction'
+import city from '../utilities/city'
 
 const wrapperStyles = {
     width: "100%",
     maxWidth: 980,
     margin: "0 auto",
 };
-
-const cities = [
-    {name: "Zurich", coordinates: [8.5417, 47.3769], remainDays: 24,},
-    {name: "Singapore", coordinates: [103.8198, 1.3521], remainDays: 2,},
-    {name: "San Francisco", coordinates: [-122.4194, 37.7749], remainDays: 30,},
-    {name: "Sydney", coordinates: [151.2093, -33.8688], remainDays: 30,},
-    {name: "Lagos", coordinates: [3.3792, 6.5244], remainDays: 15,},
-    {name: "Buenos Aires", coordinates: [-58.3816, -34.6037], remainDays: 40,},
-    {name: "Shanghai", coordinates: [121.4737, 31.2304], remainDays: 4,},
-];
 
 const zoomCenter = (zoomCity) => zoomCity ? zoomCity.coordinates : [0, 20];
 
@@ -55,7 +46,7 @@ const MapPage = ({zoomCity, zoomToCity}) => (
                         ))}
                     </Geographies>
                     <Markers>
-                        {cities.map((city, i) => (
+                        {city.cities.map((city, i) => (
                             <Marker key={i} marker={city}
                                     style={{
                                         default: {outline: "none"},
