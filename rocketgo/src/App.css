@@ -7,6 +7,7 @@
 
 .AppContent {
   padding: 0 30px;
+  min-height: 100vh;
 }
 
 .App-logo {
