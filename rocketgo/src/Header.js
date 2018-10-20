@@ -8,17 +8,20 @@ export default class MenuHeader extends Component {
   
     render() {
       const { activeItem } = this.state
-  
       return (
-        <Menu>
-          <Menu.Item header>Our Company</Menu.Item>
+        <Menu 
+            style={{background: '#181c1f'}}
+            size="huge">
+          <Menu.Item header style={{color:'#8b939b'}}>Our Company</Menu.Item>
           <Menu.Item
+            style={{color:'#8b939b'}}
             name='aboutUs'
             active={activeItem === 'aboutUs'}
             onClick={this.handleItemClick}
           />
-          <Menu.Item name='nextLaunch' active={activeItem === 'nextLaunch'} onClick={this.handleItemClick} />
+          <Menu.Item style={{color:'#8b939b'}} name='nextLaunch' active={activeItem === 'nextLaunch'} onClick={this.handleItemClick} />
           <Menu.Item
+            style={{color:'#8b939b'}}
             name='locations'
             active={activeItem === 'locations'}
             onClick={this.handleItemClick}
