@@ -1,5 +1,6 @@
 import React from "react"
 import map from './world-50m'
+import {connect} from 'unistore/react'
 import {
     ComposableMap,
     ZoomableGroup,
@@ -87,4 +88,4 @@ const MapPage = ({zoomCity}) => (
     </div>
 );
 
-export default MapPage
+export default connect(store => ({zoomCity: store.zoomCity}), {})(MapPage)
