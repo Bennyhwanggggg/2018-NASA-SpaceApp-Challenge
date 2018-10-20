@@ -6,7 +6,7 @@ import {connect} from "unistore/react";
 import LaunchInfo from "./LaunchInfo/LaunchInfo";
 
 class LandingPage extends Component {
-    selectCity = () => this.props.zoomCity !== undefined;
+    selectCity = () => this.props.zoomLocation !== undefined;
     render() {
         return (
             <div>
@@ -17,7 +17,9 @@ class LandingPage extends Component {
                             <LaunchInfo/>
                         </Grid.Column>
                     }
-                    <Grid.Column width={this.selectCity() ? 9 : undefined} floated={this.selectCity() ? 'right' : undefined}>
+                    <Grid.Column width={this.selectCity() ? 9 : undefined}
+                                 floated={this.selectCity() ? 'right' : undefined}
+                                 style={this.selectCity() ? {paddingTop: '40px'} : undefined}>
                         <MapPage/>
                     </Grid.Column>
                 </Grid>
@@ -26,4 +28,4 @@ class LandingPage extends Component {
     }
 }
 
-export default connect(store => ({zoomCity: store.zoomCity}), {})(LandingPage);
+export default connect(store => ({zoomLocation: store.zoomLocation}), {})(LandingPage);
