@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
-import MapPage from "./Map/MapPage";
-import MenuHeader from './Header';
+import MenuHeader from './layout/Header';
+import LandingPage from "./LandingPage";
 
 class App extends Component {
     render() {
         return (
             <div className="App">
                 <MenuHeader/>
-                <MapPage/>
+                <LandingPage/>
             </div>
         );
     }
