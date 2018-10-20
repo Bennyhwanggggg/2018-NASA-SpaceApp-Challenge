@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  height: 100%;
+  background: no-repeat center;
+  background-size: cover;
+}
+
+.AppContent {
+  padding: 0 30px;
 }
 
 .App-logo {

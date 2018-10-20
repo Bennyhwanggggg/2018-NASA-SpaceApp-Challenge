@@ -10,6 +10,7 @@ import {
     Marker,
 } from "react-simple-maps"
 import {VictoryPie} from "victory"
+import action from '../store/zoomCityAction'
 
 const wrapperStyles = {
     width: "100%",
@@ -36,7 +37,7 @@ const getCountDownData = (remainDays) => [
     {x: null, y: remainDays / 30 * 100, fill: "#00BCD4"},
 ];
 
-const MapPage = ({zoomCity}) => (
+const MapPage = ({zoomCity, zoomToCity}) => (
     <div>
         <div style={wrapperStyles}>
             <ComposableMap width={980} height={551} projectionConfig={{scale: 205}}
@@ -63,7 +64,8 @@ const MapPage = ({zoomCity}) => (
                                     }}>
                                 <g transform="translate(-15,-15)">
                                     <circle cx={20} cy={20} r={21} fill="transparent" stroke="#607D8B"/>
-                                    <circle cx={20} cy={20} r={9} fill="transparent" stroke="#607D8B"/>
+                                    <circle cx={20} cy={20} r={9} fill="transparent" stroke="#607D8B"
+                                            onClick={() => {zoomToCity(city);}}/>
                                     <VictoryPie standalone={false} width={40} height={40} padding={0} innerRadius={10}
                                                 data={getCountDownData(city.remainDays)} style={{
                                         labels: {fill: "transparent"},
@@ -88,4 +90,4 @@ const MapPage = ({zoomCity}) => (
     </div>
 );
 
-export default connect(store => ({zoomCity: store.zoomCity}), {})(MapPage)
+export default connect(store => ({zoomCity: store.zoomCity}), action)(MapPage)
