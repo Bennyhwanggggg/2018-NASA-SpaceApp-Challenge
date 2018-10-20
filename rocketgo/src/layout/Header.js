@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import {Menu} from 'semantic-ui-react';
 import {connect} from 'unistore/react'
-import action from '../store/zoomCityAction'
-import city from '../utilities/city'
+import action from '../store/storeAction'
 
 class MenuHeader extends Component {
     state = {};
 
     handleItemClick = (e, {name}) => this.setState({activeItem: name});
 
-    nextLaunchClick = () => this.props.zoomToCity(city.getCityNextLaunch());
+    nextLaunchClick = () => this.props.zoomToNextLaunch();
 
     locationClick = () => this.props.cleanZoom();
 
