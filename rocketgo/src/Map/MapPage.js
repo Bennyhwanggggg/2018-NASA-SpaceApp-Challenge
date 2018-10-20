@@ -33,12 +33,12 @@ const zoomCenter = (zoomCity) => zoomCity ? zoomCity.coordinates : [0, 20];
 const zoomRate = (zoomCity) => zoomCity ? 4 : 1;
 
 const getCountDownData = (remainDays) => [
-    {x: null, y: 100 - remainDays / 30 * 100, fill: "#FF5722"},
-    {x: null, y: remainDays / 30 * 100, fill: "#00BCD4"},
+    {x: null, y: 100 - remainDays / 30 * 100, fill: "#167ac6"},
+    {x: null, y: remainDays / 30 * 100, fill: "#999"},
 ];
 
 const MapPage = ({zoomCity, zoomToCity}) => (
-    <div>
+    <div style={{backgroundColor: "#031529"}}>
         <div style={wrapperStyles}>
             <ComposableMap width={980} height={551} projectionConfig={{scale: 205}}
                            style={{width: "100%", height: "auto",}}>
