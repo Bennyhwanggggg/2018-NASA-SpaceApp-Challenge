@@ -3,7 +3,7 @@ const store = {
     missions: [
         {
             launchCenter: 'French Space Center',
-            coordinates: [5.239, -52.768],
+            coordinates: [-52.768, 5.239],
             remainDays: 5,
             launchDetail: [
                 {
@@ -263,6 +263,7 @@ const store = {
                 }
             ]
         }
+
 
     ],
 
