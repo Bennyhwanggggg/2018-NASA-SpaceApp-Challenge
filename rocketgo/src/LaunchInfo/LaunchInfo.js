@@ -1,56 +1,27 @@
 import React, {Component} from 'react';
-import {Card, Image, Tab, Icon} from "semantic-ui-react";
+import {Card, Image, Icon} from "semantic-ui-react";
 import {connect} from 'unistore/react';
-import Vega from '../image/vega.jpg';
+import p1 from '../image/1.jpg';
+import p2 from '../image/2.jpg';
+import p3 from '../image/3.jpg';
+import p4 from '../image/4.jpg';
+import p5 from '../image/5.jpg';
+import p6 from '../image/6.jpg';
+import p7 from '../image/7.jpg';
+import p8 from '../image/8.jpg';
 
-// const LaunchDetail = [
-
-    // this.props.zoomLocation.LaunchDetail.map(
-    //     () => (
-    //             <Tab.Pane attached={false}>
-    //                 The great general Kim Jong-un
-    //                 <Img src={Dc}/>
-                
-    //             </Tab.Pane>
-
-    //     )
-    // )
-
-
-    // {menuItem: 'Rocket type', render: () => <Tab.Pane attached={false}>The great general Kim Jong-un</Tab.Pane>},
-    // {menuItem: 'Launch Location', render: () => <Tab.Pane attached={false}>
-    //         Washington DC
-    //         <Image src={Dc}/>
-    //     </Tab.Pane>},
-    // {menuItem: 'Schedule', render: () => <Tab.Pane attached={false}>
-    //         <ul>
-    //             <li>abcd fe as das csaz ev asdasd</li>
-    //             <li>abcd fe as das csaz ev asdasd</li>
-            
-    //         </ul>
-    //     </Tab.Pane>},
-    // {menuItem: 'Nuclear warhead equivalent', render: () => <Tab.Pane attached={false}>
-    //         The Soviet RDS-220 hydrogen bomb (code name Ivan[3] or Vanya), known by Western nations as Tsar Bomba
-    //     </Tab.Pane>
-    // },
-// ];
-
-const extra = (
-    <a>
-        <Icon name='user' />
-        86 watches
-    </a>
-)
+const rocketImage = [p1,p2,p3,p4,p5,p6,p7,p8];
 
 class LaunchInfo extends Component {
     state = {};
 
     render() {
         return (
-            <Card image={Vega} centered fluid color='yellow' style={{justifyContent: 'center',alignItems: 'center'}} background-color='black'>
-            <Image src={Vega} size='medium' width="100%" style={{justifyContent: 'center',alignItems: 'center'}}/>
+            <Card image={rocketImage[this.props.zoomLocation.rock]} centered fluid color='yellow'
+                  style={{justifyContent: 'center',alignItems: 'center', backgroundColor: '#edf4ff'}}>
+            <Image src={rocketImage[this.props.zoomLocation.rock]} size='medium' width="100%"
+                   style={{justifyContent: 'center',alignItems: 'center'}}/>
                 <Card.Content>
-                    {/* <Image src={RocketImage} floated='left' size='mini'/> */}
                     <Card.Header>
                         First Rocket from {this.props.zoomLocation.launchCenter}
                     </Card.Header>
@@ -70,18 +41,8 @@ class LaunchInfo extends Component {
                         <Icon name='user' />
                         86 watches
                     </a>
-
-                    {/* <Tab menu={{secondary: true, pointing: true}} panes={LaunchDetail} style={{minHeight: '500px'}}/> */}
                 </Card.Content>
             </Card>
-
-        //     <Card
-        //         image={Vega}
-        //         header={this.props.zoomLocation.launchDetail[0].rocket}
-        //         meta={this.props.zoomLocation.launchDetail[0].agency}
-        //         description={this.props.zoomLocation.launchDetail[0].missionCode}
-        //         extra={extra}
-        //   />
         )
     }
 }

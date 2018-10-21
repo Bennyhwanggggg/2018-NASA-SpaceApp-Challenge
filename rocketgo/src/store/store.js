@@ -5,6 +5,7 @@ const store = {
             launchCenter: 'French Space Center',
             coordinates: [-52.768, 5.239],
             remainDays: 5,
+            rock:1,
             launchDetail: [
                 {
                     rocket: 'Ariane 5 ECA',
@@ -70,6 +71,7 @@ const store = {
             launchCenter: 'China Aerospace Science and Technology Corporation',
             coordinates: [100.291, 40.958],
             remainDays: 29,
+            rock:2,
             launchDetail: [
                 {
                     rocket: 'Long March 2C',
@@ -86,6 +88,7 @@ const store = {
             launchCenter: 'Indian Space Research Organization',
             coordinates: [80.2304, 13.7199],
             remainDays: 21,
+            rock:3,
             launchDetail: [
                 {
                     rocket: 'GSLV Mk III',
@@ -126,6 +129,7 @@ const store = {
             launchCenter: 'Khrunichev State Research and Production Space Center',
             coordinates: [63.342, 45.92],
             remainDays: 7,
+            rock:4,
             launchDetail: [
                 {
                     rocket: 'Soyuz-FG',
@@ -158,6 +162,7 @@ const store = {
             launchCenter: 'Onenui Station',
             coordinates: [177.864469, -39.262833],
             remainDays: 30,
+            rock:5,
             launchDetail: [
                 {
                     rocket: 'Electron',
@@ -182,6 +187,7 @@ const store = {
             launchCenter: 'Space Launch Complex',
             coordinates: [-120.6262, 34.5815],
             remainDays: 10,
+            rock:6,
             launchDetail: [
                 {
                     rocket: 'Delta IV Heavy',
@@ -221,6 +227,7 @@ const store = {
             launchCenter: 'Kennedy Space Center',
             coordinates: [-80.60428186, 28.60822681],
             remainDays: 24,
+            rock:7,
             launchDetail: [
                 {
                     rocket: 'Falcon 9 Block 5',
@@ -244,6 +251,7 @@ const store = {
             launchCenter: 'Plesetsk Cosmodrome',
             coordinates: [62.92883, 40.457098],
             remainDays: 3,
+            rock:5,
             launchDetail: [
                 {
                     rocket: 'Soyuz 2.1B/Fregat-M',

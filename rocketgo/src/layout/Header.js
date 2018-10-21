@@ -18,15 +18,9 @@ class Header extends Component {
             <Menu
                 style={{background: '#181c1f'}}
                 size="huge">
-                <Menu.Item header style={{color: '#8b939b'}}>Our Company</Menu.Item>
-                <Menu.Item
-                    style={{color: '#8b939b'}}
-                    name='aboutUs'
-                    active={activeItem === 'aboutUs'}
-                    onClick={this.handleItemClick}
-                />
-                <Menu.Item style={{color: '#8b939b'}} name='nextLaunch' active={activeItem === 'nextLaunch'}
-                           onClick={this.nextLaunchClick}/>
+
+                <Menu.Item header style={{color: '#8b939b'}}>Find Next Rocket Launch</Menu.Item>
+
                 <Menu.Item
                     style={{color: '#8b939b'}}
                     name='HomePage'
@@ -36,6 +30,10 @@ class Header extends Component {
                         this.props.history.push('/');
                     }}
                 />
+
+                <Menu.Item style={{color: '#8b939b'}} name='nextLaunch' active={activeItem === 'nextLaunch'}
+                           onClick={this.nextLaunchClick}/>
+
                 <Menu.Item
                     style={{color: '#8b939b'}}
                     name='Personal Info'
