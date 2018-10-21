@@ -69,7 +69,7 @@ const MapPage = ({missions, zoomLocation, zoomTo}) => (
                                     stroke: "none",
                                 }}
                                 >
-                                    {launch.missionCode}
+                                    {launch.launchCenter}
                                 </text>
                             </Marker>
                         ))}
