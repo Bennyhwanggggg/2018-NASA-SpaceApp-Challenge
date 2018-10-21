@@ -29,9 +29,18 @@ class Header extends Component {
                            onClick={this.nextLaunchClick}/>
                 <Menu.Item
                     style={{color: '#8b939b'}}
-                    name='locations'
+                    name='HomePage'
                     active={activeItem === 'locations'}
-                    onClick={this.locationClick}
+                    onClick={() => {
+                        this.locationClick();
+                        this.props.history.push('/');
+                    }}
+                />
+                <Menu.Item
+                    style={{color: '#8b939b'}}
+                    name='Personal Info'
+                    active={activeItem === 'locations'}
+                    onClick={() => {this.props.history.push('/personal')}}
                 />
             </Menu>
         )

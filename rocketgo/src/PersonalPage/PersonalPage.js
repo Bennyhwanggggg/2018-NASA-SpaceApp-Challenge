@@ -1,9 +1,11 @@
 import React from 'react';
 import Iframe from 'react-iframe'
+import Header from "../layout/Header";
 
-const PersonalPage = () => (
+const PersonalPage = ({history}) => (
     <div>
-        <Iframe url='https://talia-etdb.github.io/index/'
+        <Header history={history}/>
+        <Iframe url='https://ppesjk.cfapps.io/#/demo'
                 id="if1" style={{visibility:"visible"}}
                 width='100%'
                 height='100%'/>
