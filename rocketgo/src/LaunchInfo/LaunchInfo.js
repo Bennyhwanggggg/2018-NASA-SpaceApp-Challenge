@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import {Card, Image, Tab, Icon} from "semantic-ui-react";
-import RocketImage from '../image/Rocket.png';
-import Dc from '../image/DC.jpg';
 import {connect} from 'unistore/react';
 import Vega from '../image/vega.jpg';
 
@@ -49,40 +47,41 @@ class LaunchInfo extends Component {
 
     render() {
         return (
-            // <Card image={Vega} centered fluid color='yellow'>
-            // <Image src={Vega} size='medium' width="100%"/>
-            //     <Card.Content>
-            //         {/* <Image src={RocketImage} floated='left' size='mini'/> */}
-            //         <Card.Header>
-            //             First Rocket from {this.props.zoomLocation.launchCenter}
-            //         </Card.Header>
-            //         <Card.Meta>
-            //             {this.props.zoomLocation.launchCenter} located at {this.props.zoomLocation.launchDetail.location}
-            //         </Card.Meta>
-            //         <Card.Description>
-            //         <ul>
-            //             <li>Rocket name: {this.props.zoomLocation.launchDetail[0].rocket}</li>
-            //             <li>Rocket mission: {this.props.zoomLocation.launchDetail[0].agency}</li>
-            //         </ul>
-            //         </Card.Description>
-            //     </Card.Content>
-            //     <Card.Content extra>
-                    // <a>
-                    //     <Icon name='user' />
-                    //     86 watches
-                    // </a>
+            <Card image={Vega} centered fluid color='yellow' style={{justifyContent: 'center',alignItems: 'center'}} background-color='black'>
+            <Image src={Vega} size='medium' width="100%" style={{justifyContent: 'center',alignItems: 'center'}}/>
+                <Card.Content>
+                    {/* <Image src={RocketImage} floated='left' size='mini'/> */}
+                    <Card.Header>
+                        First Rocket from {this.props.zoomLocation.launchCenter}
+                    </Card.Header>
+                    <Card.Meta>
+                        {this.props.zoomLocation.launchCenter} located at {this.props.zoomLocation.launchDetail[0].location}
+                    </Card.Meta>
+                    <Card.Description>
+                    <ul>
+                        <li>Rocket name: {this.props.zoomLocation.launchDetail[0].rocket}</li>
+                        <li>Rocket agency: {this.props.zoomLocation.launchDetail[0].agency}</li>
+                        <li>Mission: {this.props.zoomLocation.launchDetail[0].missionDetails}</li>
+                    </ul>
+                    </Card.Description>
+                </Card.Content>
+                <Card.Content extra>
+                    <a>
+                        <Icon name='user' />
+                        86 watches
+                    </a>
 
-            //         {/* <Tab menu={{secondary: true, pointing: true}} panes={LaunchDetail} style={{minHeight: '500px'}}/> */}
-            //     </Card.Content>
-            // </Card>
+                    {/* <Tab menu={{secondary: true, pointing: true}} panes={LaunchDetail} style={{minHeight: '500px'}}/> */}
+                </Card.Content>
+            </Card>
 
-            <Card
-                image={Vega}
-                header={this.props.zoomLocation.launchDetail[0].rocket}
-                meta={this.props.zoomLocation.launchDetail[0].agency}
-                description={this.props.zoomLocation.launchDetail[0].missionCode}
-                extra={extra}
-          />
+        //     <Card
+        //         image={Vega}
+        //         header={this.props.zoomLocation.launchDetail[0].rocket}
+        //         meta={this.props.zoomLocation.launchDetail[0].agency}
+        //         description={this.props.zoomLocation.launchDetail[0].missionCode}
+        //         extra={extra}
+        //   />
         )
     }
 }
