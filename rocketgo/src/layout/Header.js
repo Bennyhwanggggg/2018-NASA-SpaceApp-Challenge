@@ -3,7 +3,7 @@ import {Menu} from 'semantic-ui-react';
 import {connect} from 'unistore/react'
 import action from '../store/storeAction'
 
-class MenuHeader extends Component {
+class Header extends Component {
     state = {};
 
     handleItemClick = (e, {name}) => this.setState({activeItem: name});
@@ -29,13 +29,22 @@ class MenuHeader extends Component {
                            onClick={this.nextLaunchClick}/>
                 <Menu.Item
                     style={{color: '#8b939b'}}
-                    name='locations'
+                    name='HomePage'
                     active={activeItem === 'locations'}
-                    onClick={this.locationClick}
+                    onClick={() => {
+                        this.locationClick();
+                        this.props.history.push('/');
+                    }}
+                />
+                <Menu.Item
+                    style={{color: '#8b939b'}}
+                    name='Personal Info'
+                    active={activeItem === 'locations'}
+                    onClick={() => {this.props.history.push('/personal')}}
                 />
             </Menu>
         )
     }
 }
 
-export default connect('', action)(MenuHeader)
+export default connect('', action)(Header)

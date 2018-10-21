@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-import './App.css';
 import MapPage from "./Map/MapPage";
 import {Grid} from "semantic-ui-react";
 import {connect} from "unistore/react";
 import LaunchInfo from "./LaunchInfo/LaunchInfo";
+import Header from "./layout/Header";
 
 class LandingPage extends Component {
     selectCity = () => this.props.zoomLocation !== undefined;
     render() {
         return (
             <div>
+                <Header history={this.props.history}/>
                 <Grid>
                     {
                         this.selectCity() &&
