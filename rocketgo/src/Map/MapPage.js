@@ -65,7 +65,7 @@ const MapPage = ({missions, zoomLocation, zoomTo}) => (
                                 </g>
                                 <text textAnchor="middle" y={40} color="black" style={{
                                     fontFamily: "Roboto, sans-serif",
-                                    fill: "#607D8B",
+                                    fill: "#FB9123",
                                     stroke: "none",
                                 }}
                                 >
