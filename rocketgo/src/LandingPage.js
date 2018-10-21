@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './App.css';
 import MapPage from "./Map/MapPage";
 import {Grid} from "semantic-ui-react";
 import {connect} from "unistore/react";

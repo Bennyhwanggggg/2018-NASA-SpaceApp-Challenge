@@ -12,3 +12,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  text-align: center;
+  height: 100%;
+  background: no-repeat center;
+  background-size: cover;
+}
+
+.AppContent {
+  padding: 0 30px;
+  min-height: 100vh;
+}
